@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 8080
 
 spring:
   application:
@@ -9,10 +9,10 @@ eureka:
     hostname: 192.168.1.164
     prefer-ip-address: true
   client:
-    registerWithEureka: true
+    registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://192.168.1.164:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 management:
   endpoint:
